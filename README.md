@@ -53,7 +53,7 @@ Instituto de Biofísica Carlos Chagas Filho - UFRJ
 
 # Install
 1. Edit "complile.sh" to select your favorite, and available compiler (intel is the fastest):
-# g77,gfortran,intel32,intel64,sun
+"g77,gfortran,intel32,intel64,sun"
 compiler=intel64
 
 2. If necessary, change the compiler path and flags
