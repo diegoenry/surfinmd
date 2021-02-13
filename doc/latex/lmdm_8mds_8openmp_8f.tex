@@ -1,0 +1,323 @@
+\hypertarget{lmdm_8mds_8openmp_8f}{}\section{src/lmdm.mds.\+openmp.\+f File Reference}
+\label{lmdm_8mds_8openmp_8f}\index{src/lmdm.\+mds.\+openmp.\+f@{src/lmdm.\+mds.\+openmp.\+f}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_aa81f9e2405716814317f319fe16aabf3}{mds} (maxatm, rp, natom, atoms, radii, atmden, atten, mol, atmarea)
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_abe5d23f06aa6cacf4afa05316bab2b62}{putpnt} (itype, i, moln, atten, coor, area, pcen, acen, natom, atmarea)
+\item 
+real function \hyperlink{lmdm_8mds_8openmp_8f_ae601373f8acae350412756b81d7274c6}{dot} (c, d)
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_ac8fc253e71c54239b8fdeca12294dc5c}{cross} (c, d, e)
+\item 
+real function \hyperlink{lmdm_8mds_8openmp_8f_a4f0dc28bb4bc5945b250816796a6393c}{triple} (c, d, e)
+\item 
+real function \hyperlink{lmdm_8mds_8openmp_8f_a0bbe4edf805497daf7eb55647f0e5463}{dis2} (c, d)
+\item 
+real function \hyperlink{lmdm_8mds_8openmp_8f_a01231839cc4a4124a635ad9d120126a6}{dis} (c, d)
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_a104a2973a06ccc713e06d9f6cb97874e}{normal} (x)
+\item 
+real function \hyperlink{lmdm_8mds_8openmp_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60}{disptl} (cen, axis, pnt)
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_aede2b2a740b771fe587f556209c97414}{subdiv} (cen, rad, x, y, angle, density, maxsub, pnts,                   npnt, ps)
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_ad6dfe437b099fa551d05e784b5c7afcd}{subarc} (cen, rad, axis, density, x, v, maxsub, pnts,                   npnt, ps)
+\item 
+subroutine \hyperlink{lmdm_8mds_8openmp_8f_a4957fbd7ab497fae37c246c1ae6d6f86}{subcir} (cen, rad, axis, density, maxsub, pnts, npnt,                   ps)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\hypertarget{lmdm_8mds_8openmp_8f_ac8fc253e71c54239b8fdeca12294dc5c}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!cross@{cross}}
+\index{cross@{cross}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{cross(c, d, e)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine cross (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d, }
+\item[{real, dimension(3)}]{e}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_ac8fc253e71c54239b8fdeca12294dc5c}
+
+
+Definition at line 854 of file lmdm.\+mds.\+openmp.\+f.
+
+\hypertarget{lmdm_8mds_8openmp_8f_a01231839cc4a4124a635ad9d120126a6}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!dis@{dis}}
+\index{dis@{dis}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{dis(c, d)}]{\setlength{\rightskip}{0pt plus 5cm}real function dis (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_a01231839cc4a4124a635ad9d120126a6}
+
+
+Definition at line 888 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{lmdm_8mds_8openmp_8f_a01231839cc4a4124a635ad9d120126a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_a0bbe4edf805497daf7eb55647f0e5463}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!dis2@{dis2}}
+\index{dis2@{dis2}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{dis2(c, d)}]{\setlength{\rightskip}{0pt plus 5cm}real function dis2 (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_a0bbe4edf805497daf7eb55647f0e5463}
+
+
+Definition at line 874 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{lmdm_8mds_8openmp_8f_a0bbe4edf805497daf7eb55647f0e5463_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!disptl@{disptl}}
+\index{disptl@{disptl}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{disptl(cen, axis, pnt)}]{\setlength{\rightskip}{0pt plus 5cm}real function disptl (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real, dimension(3)}]{axis, }
+\item[{real, dimension(3)}]{pnt}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60}
+
+
+Definition at line 919 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{lmdm_8mds_8openmp_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_ae601373f8acae350412756b81d7274c6}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!dot@{dot}}
+\index{dot@{dot}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{dot(c, d)}]{\setlength{\rightskip}{0pt plus 5cm}real function dot (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_ae601373f8acae350412756b81d7274c6}
+
+
+Definition at line 840 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{lmdm_8mds_8openmp_8f_ae601373f8acae350412756b81d7274c6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_aa81f9e2405716814317f319fe16aabf3}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!mds@{mds}}
+\index{mds@{mds}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{mds(maxatm, rp, natom, atoms, radii, atmden, atten, mol, atmarea)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine mds (
+\begin{DoxyParamCaption}
+\item[{integer}]{maxatm, }
+\item[{real}]{rp, }
+\item[{integer}]{natom, }
+\item[{real, dimension(3,natom)}]{atoms, }
+\item[{real, dimension(natom)}]{radii, }
+\item[{real, dimension(natom)}]{atmden, }
+\item[{integer, dimension(natom)}]{atten, }
+\item[{integer, dimension(natom)}]{mol, }
+\item[{real, dimension(natom)}]{atmarea}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_aa81f9e2405716814317f319fe16aabf3}
+
+
+Definition at line 7 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{lmdm_8mds_8openmp_8f_aa81f9e2405716814317f319fe16aabf3_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_a104a2973a06ccc713e06d9f6cb97874e}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!normal@{normal}}
+\index{normal@{normal}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{normal(x)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine normal (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{x}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_a104a2973a06ccc713e06d9f6cb97874e}
+
+
+Definition at line 900 of file lmdm.\+mds.\+openmp.\+f.
+
+\hypertarget{lmdm_8mds_8openmp_8f_abe5d23f06aa6cacf4afa05316bab2b62}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!putpnt@{putpnt}}
+\index{putpnt@{putpnt}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{putpnt(itype, i, moln, atten, coor, area, pcen, acen, natom, atmarea)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine putpnt (
+\begin{DoxyParamCaption}
+\item[{integer}]{itype, }
+\item[{integer}]{i, }
+\item[{integer}]{moln, }
+\item[{integer}]{atten, }
+\item[{real, dimension(3)}]{coor, }
+\item[{real}]{area, }
+\item[{real, dimension(3)}]{pcen, }
+\item[{real, dimension(3)}]{acen, }
+\item[{}]{natom, }
+\item[{real, dimension(natom)}]{atmarea}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_abe5d23f06aa6cacf4afa05316bab2b62}
+
+
+Definition at line 708 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{lmdm_8mds_8openmp_8f_abe5d23f06aa6cacf4afa05316bab2b62_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_ad6dfe437b099fa551d05e784b5c7afcd}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!subarc@{subarc}}
+\index{subarc@{subarc}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{subarc(cen, rad, axis, density, x, v, maxsub, pnts,                   npnt, ps)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine subarc (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real}]{rad, }
+\item[{real, dimension(3)}]{axis, }
+\item[{real}]{density, }
+\item[{real, dimension(3)}]{x, }
+\item[{real, dimension(3)}]{v, }
+\item[{integer}]{maxsub, }
+\item[{real, dimension (3, maxsub)}]{pnts, }
+\item[{integer}]{npnt, }
+\item[{real}]{ps}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_ad6dfe437b099fa551d05e784b5c7afcd}
+
+
+Definition at line 984 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{lmdm_8mds_8openmp_8f_ad6dfe437b099fa551d05e784b5c7afcd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_a4957fbd7ab497fae37c246c1ae6d6f86}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!subcir@{subcir}}
+\index{subcir@{subcir}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{subcir(cen, rad, axis, density, maxsub, pnts, npnt,                   ps)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine subcir (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real}]{rad, }
+\item[{real, dimension(3)}]{axis, }
+\item[{real}]{density, }
+\item[{integer}]{maxsub, }
+\item[{real, dimension(3, maxsub)}]{pnts, }
+\item[{integer}]{npnt, }
+\item[{real}]{ps}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_a4957fbd7ab497fae37c246c1ae6d6f86}
+
+
+Definition at line 1013 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{lmdm_8mds_8openmp_8f_a4957fbd7ab497fae37c246c1ae6d6f86_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{lmdm_8mds_8openmp_8f_aede2b2a740b771fe587f556209c97414}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!subdiv@{subdiv}}
+\index{subdiv@{subdiv}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{subdiv(cen, rad, x, y, angle, density, maxsub, pnts,                   npnt, ps)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine subdiv (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real}]{rad, }
+\item[{real, dimension(3)}]{x, }
+\item[{real, dimension(3)}]{y, }
+\item[{real}]{angle, }
+\item[{real}]{density, }
+\item[{integer}]{maxsub, }
+\item[{real, dimension (3, maxsub)}]{pnts, }
+\item[{integer}]{npnt, }
+\item[{real}]{ps}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_aede2b2a740b771fe587f556209c97414}
+
+
+Definition at line 946 of file lmdm.\+mds.\+openmp.\+f.
+
+\hypertarget{lmdm_8mds_8openmp_8f_a4f0dc28bb4bc5945b250816796a6393c}{}\index{lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}!triple@{triple}}
+\index{triple@{triple}!lmdm.\+mds.\+openmp.\+f@{lmdm.\+mds.\+openmp.\+f}}
+\subsubsection[{triple(c, d, e)}]{\setlength{\rightskip}{0pt plus 5cm}real function triple (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d, }
+\item[{real, dimension(3)}]{e}
+\end{DoxyParamCaption}
+)}\label{lmdm_8mds_8openmp_8f_a4f0dc28bb4bc5945b250816796a6393c}
+
+
+Definition at line 863 of file lmdm.\+mds.\+openmp.\+f.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=267pt]{lmdm_8mds_8openmp_8f_a4f0dc28bb4bc5945b250816796a6393c_cgraph}
+\end{center}
+\end{figure}
+
+

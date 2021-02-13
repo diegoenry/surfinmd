@@ -1,0 +1,5 @@
+../bin/putchain -i ref.pdb -o refc.pdb -a 3120
+../bin/surfinmd -r refc.pdb -i traj.pdb -p 1.4 -d 1.0 -a 6
+../bin/surfinmd.dcd -r refc.pdb -dcd traj.dcd -p 1.4 -d 1.0 -a 6
+../bin/surfinmd -r bzl_tr_md10_ref.pdb -i big.pdb -p 1.4 -d 1.0 -a 6
+../bin/surfinmd.dcd -r bzl_tr_md10_ref.pdb -dcd big.dcd -p 1.4 -d 1.0 -a 6

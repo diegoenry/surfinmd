@@ -1,0 +1,252 @@
+!pegepa         ; Pedro G. Pascutti
+!awss           ; Alan Wilter
+!debg / dgomes  ; Diego Enry B. Gomes, 
+!gabriel        ; Gabriel Limaverde S. C. Sousa
+!melomcr        ; Marcelo C. R. Melo
+
+
+***********************************************************************
+Todo list
+***********************************************************************
+1) Ainda não faz superfície molecular, só faz a intermolecular.
+2) A área por átomo passa por vetor APENAS para "atten=6" as demais passam via dots e NÃO são suportadas por esta versão.
+
+Aqui está a modificação que permite usar um vetor para guardar os dados que iriam para o "dots".
+É necessário modificar o "write(7,550)..." para todas as "atten", para "atmarea(i2)=atmarea(i2)+area".
+
+
+**********************************************************************
+versao 1.06p1 - Mon Nov 23 21:19:54 BRST 2015
+**********************************************************************
+1) Atualizei o jeito como o SURF imprime os resultados, agora a area do receptor e ligante sao escritas separadamente.
+  Por que o Ligante (nao proteico) nao tem definicao do que eh Hidrofobico e Hidrofilica.
+2) Inclui novos residuos na tabela de Hidrofobicos e Hidrofilicos... ainda precisamos completar com os nomes de todos os FF.
+3) Criei uma pasta "tools" para deixar scripts para analises multiplas. (cria painel xmgrace)
+4) Pequenos ajustes de identacao no codigo do lmdm.mds.f
+
+
+**********************************************************************
+versao 1.06 - Fri Nov 20 12:00:08 BRST 2015
+**********************************************************************
+
+1) Incluido o suporte a arquivos DCD.
+2) Com o DCD é possivel selecionar trechos da trajetoria com as flags "-b” e “-e”
+3) Algumas limpezas no codigo
+4) Documentacao com o DOXYGEN (vejam o HTML na pasta doc ) 
+
+OBS o suporte a NetCDF e XTC precisa compilar bibliotecas externas. (Já consegui um SURF-beta com netcdf, só não tenho um jeito simples de instalar)
+
+
+**********************************************************************
+versao 1.05.r6 
+O samuel me enviou uns arquivos em que o surf nao produz area para o ligante
+estou trabalhando neles para resolver.
+O que acontece eh que se o numero dos residuos de aminoacidos nao eh continuo o amnmed(i), amnarea(i) 
+pega o numero que estiver la, e nao o numero "serial". Entao mais para a frente o programa se nao escreve todas as areas:
+
+ex:
+tem 5 residuos, mas a numeracao esta assim:
+1 2 3 4 9
+o prog plota as areas de 1, 2, 3, 4, 5  (cade o 9 ?). entendeu ?
+
+modificacao no surfinmd.f e getarea.f !bugfix v1.05r6
+
+**********************************************************************
+versao 1.05.r5 eu nao lembro qq mudei
+
+
+**********************************************************************
+versao 1.05.r4 | dgomes, Tue Feb  8 00:08:03 CET 2011
+Feature request. O Pedro Valiente pediu uma alteracao para poder rodar mais de 100mil frames
+Agora a versao "BIG" nao calcula o desvio padrao, no entanto consegue calcular quantos frames voce quiser.
+Ainda tenho minhas duvidas quanto ao limite disso por que eh preciso armazenar a soma de todas as areas de contato
+nao sei se o computador vai aguentar um numero tao grande.
+
+***********************************************************************
+versao 1.05.r3 |
+Bugfix na versao do Valiente. Agora suporta 50mil atomos.
+
+***********************************************************************
+versao 1.05.r2 |
+Adicionado a compilacao especial para a Priscila S.F. Celestino e Pedro Valiente F.
+
+***********************************************************************
+versao 1.05r1 | 
+***********************************************************************
+Corrigido. O parametro MAXNBR nao havia sido mudado em todos os lugares.
+O resultado agora bate com a versao v1.04 e eh parecido com o PISA para 1BVE.PDB (pasta ./test)
+
+#readref.f  Modificado para lidar com arquivos de referencia com estes finais:
+          if((line(1:6).eq."TER   ").or.(line(1:6).eq."ENDMDL").
+     & or.(line(1:6).eq."      ").or.(line(1:6).eq."END   ")) then
+
+
+***********************************************************************
+versao 1.05 | Wed May 27 09:41:32 PDT 2009 !by debg
+***********************************************************************
+Adicionado o valor para o atomo P3 do martini forcefield. 
+Existe alguma coisa errada com esta versao pois o resultado esta dando 
+a metade do valor de referencia produzido pelo PISA. Mon Feb 22 18:42:48 BRT 2010
+Adicionada a rotina para "getatype.f" para separar a area por tipo de residuo. (total, hidrofobico, hidrofilico)
+
+***********************************************************************
+versao 1.04 | Tue Jul 29 22:04:21 BRT 2008 !by debg
+***********************************************************************
+1) Organizei o código como o Alan pediu.
+
+2) Ainda NÃO corrigi a limitação do "atten=6"
+
+3) Comecei a adicionar códigos de erro nos arquivos fonte, assim fica mais 
+fácil para identificar problemas na execução do programa. Procure por
+!error codes em todos os arquivos fonte.
+
+A dica para criar esses códigos de erro é terminar o programa ou as subrotinas
+com "return" e "end" 
+
+ex.
+
+return
+!error codes
+999     write(*,*) "ERRO: Arquivo não encontrado."
+end
+
+4) O código com o maior número de modificações foi o readparam.f
+Agora não é mais necessário ter o arquivo "surfinmd.par" formatado certinho
+de um jeito que o "readparam.f" antigo conseguisse ler. 
+Os parâmetros do SURFINMD agora são passados via linha de comando (igual
+ao GROMACS :D ).
+Nem parece mas deu um baita trabalho para fazer o programa entender direito
+esses argumentos, independente da ordem e sem dar erro e fazer CHARACTER
+virar INTEGER ou REAL... enfim esse trabalho todo para fazer algo como o
+exemplo abaixo.
+
+          if(argv(1:4).eq."-ext") then ; call getarg(i+1,argv)
+            if(argv.eq." ".or.argv(1:1).eq."-") argv=default(7)
+            read(argv,*,err=950) exclude !string to INTEGER
+          endif
+
+5) Descobri uma coisa legau no F77 que é a possibilidade de colocar um
+";" (ponto e vírgula) e dar um outro comando na mesma linha. Usei isso
+pra caramba no "readparam.f". Há ! Isso sempre teve no "C" e no bash e 
+compania, n acredito q não sabia dessa no F77.
+
+6) No novo arquivo "readparam.f" dá para ver que eu usei uma "função" nova
+que se chama " default.f -> call default(i) ". É bem simples, a função 
+"default" atribui os valores padrão para os parametros para executar o 
+SURFINMD
+
+7) Outra modificação interessante foi a criação do arquivo de ajuda:
+help.f, subrotina help(). Digitem "surfinmd -h" para ver como ficou bonito.
+
+
+
+***********************************************************************
+versao 1.03 | Fri Jul 25 15:52:34 BRT 2008 !by debg
+***********************************************************************
+Corrigi o script de compilação e adicionei o compilador da SUN.
+
+Lista de modificações !by debg 25Jul2008 
+
+I) Adicionado vetor "atmarea" que substitui o arquivo "dots"
+Arquivos afetados: surfinmd.f, parameters.f, lmdm.mdf.f
+
+
+Arquivo: surinmd.f
+------------------------------------------------------------------------
+1) Adicionado vetor "atmarea"
+           call mds
+     &(maxatm,rp,natom,atoms,radii,atmden,atten,mol)
+           call mds
+     &(maxatm,rp,natom,atoms,radii,atmden,atten,mol,atmarea)
+
+2) Adicionado vetor "atmarea"
+           call getarea(natom,maxamn,amn,amnarea,areatot)
+           call getarea(natom,maxamn,amn,amnarea,areatot,atmarea)
+
+Arquivo: parameters.f
+------------------------------------------------------------------------
+1) Adicionado
+        real atmarea(maxatm)
+
+
+Arquivo: lmdm.mdf.f - Rotina MDS
+------------------------------------------------------------------------
+1)
+      subroutine mds(maxatm,rp,natom,atoms,radii,atmden,atten,mol)
+      subroutine mds
+     &(maxatm,rp,natom,atoms,radii,atmden,atten,mol,atmarea)
+
+2) Adicionado
+      real atmarea(natom) !by debg 25Jul2008
+
+3) Comentadas as referencias ao arquivo dots
+c open output file
+C      open (unit=7,file='dots',status='unknown',
+C     :form='unformatted',err=9020)
+!by debg 25Jul2008      open (unit=7,file='dots',err=9020) !by AWSS
+!by debg 25Jul2008      write(7,*) !by AWSS
+!by debg 25Jul2008      rewind(7) !by AWSS
+c main loop:
+
+4) Adicionado vetor "atmarea" a TODAS as chamadas da rotina putpnt.
+Aqui só mostro um exemplo de uma das chamadas por que são umas seis ou sete.
+
+      call putpnt (3, i,mol(i), atten(i), pnts (1, ipnt), area, pijk,
+     * atoms (1, i)) !by AWSS
+      call putpnt (3, i,mol(i), atten(i), pnts (1, ipnt), area, pijk,
+     * atoms (1, i),natom,atmarea) !by debg 25Jul2008
+
+5) Comentados as referencias ao arquivo "16".
+!by debg 25Jul2008      write (16, 1010) nprobe
+!by debg 25Jul2008      write (16, 1060) nlow
+!by debg 25Jul2008      write (16, 2050) nsp(1), nsp(2), nsp(3),nspt
+
+
+Arquivo: lmdm.mdf.f - Subrotina putpnt
+------------------------------------------------------------------------
+1) Adicionado vetor "atmarea"
+      subroutine putpnt (itype, i, moln, atten, coor, area, pcen, acen) !by AWSS
+      subroutine putpnt 
+     &(itype, i, moln, atten, coor, area, pcen, acen, natom, atmarea) !by debg 25Jul2008
+
+2) Adicionado
+      real atmarea(natom) !by debg 25Jul2008
+
+3) Passando o dots APENAS da "atten=6" por vetor.
+!by debg aqui ele escreve o dots
+!by debg i2=numero do atomo
+!by debg moln=numero da molecula (1 ou 2)
+!by debg itype2= ainda nao sei
+!by debg coor= xyz do ponto
+!by debg area= area :) 
+!by debg outnml = ainda nao sei
+!by debg
+!      write (7,550) i2, moln, itype2, coor, area, outnml !by AWSS 
+!      write (7,*) i2,area !by debg 28jun2008 era inútil escrever as outras variáveis
+      atmarea(i2)=atmarea(i2)+area !by debg 25Jul2008 agora passa as áreas por átomo via vetor :)
+
+Arquivo: getarea.f
+------------------------------------------------------------------------
+1) Adicionado vetor "atmarea"
+        subroutine getarea(natom,maxamn,amn,amnarea,areatot)
+        subroutine getarea(natom,maxamn,amn,amnarea,areatot,atmarea)
+
+***********************************************************************
+versao 1.02 | Wed Jul  9 23:37:01 BRT 2008 !by debg
+***********************************************************************
+Troquei os arquivos para testar o programa: ref.pdb e traj.pdb
+note que o surfinmd.par usa o "refc.pdb" que é o "ref.pdb" com as letras
+das cadeias adicionadas usando o programa botacadeia.v1.01.f
+
+***********************************************************************
+versao 1.01 | Thu Jul  3 20:19:34 BRT 2008 !by debg
+***********************************************************************
+Adicionado o programa botacadeia.v1.01.f
+
+***********************************************************************
+versao 1.0 | Sun Jun 29 00:29:29 BRT 2008  !by debg
+***********************************************************************
+O programa foi todo reescrito.
+
+
+

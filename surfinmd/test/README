@@ -1,0 +1,23 @@
+Preste atencao seu mané !
+
+O SURFINMD só faz CORRETAMENTE a área de interacao entre a cadeia A
+e cadeia B.
+
+Se voce executar o SURFINMD usando o arquivo de teste que está nesta pasta o
+resultado vai estar ERRADO !!! 
+
+----------------------------------------
+Isso é para você ler the fucking manual.
+----------------------------------------
+
+O arquivo nesta pasta "ref.pdb" precisa ser "processado" para que o as DUAS
+primeiras moléculas (hiv protein dimmer) virem um única CADEIA (A) e o DMP,
+que é o ligante, vire a CADEIA (B).
+
+Agoooora sim o resultado deve ficar certo.
+
+Ahh Diego, como coloca a cadeia ? 
+Usa o programa "putchain". ( putchain -h )
+
+Tá vou dar um desconto, a area por residuo deve estar certinha mas nao confie.
+

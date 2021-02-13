@@ -1,0 +1,402 @@
+\hypertarget{_b_i_g_8lmdm_8mds_8f}{}\section{src/\+B\+I\+G.lmdm.\+mds.\+f File Reference}
+\label{_b_i_g_8lmdm_8mds_8f}\index{src/\+B\+I\+G.\+lmdm.\+mds.\+f@{src/\+B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_aa81f9e2405716814317f319fe16aabf3}{mds} (maxatm, rp, natom, atoms, radii, atmden, atten, mol, atmarea)
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_abe5d23f06aa6cacf4afa05316bab2b62}{putpnt} (itype, i, moln, atten, coor, area, pcen, acen, natom, atmarea)
+\item 
+real function \hyperlink{_b_i_g_8lmdm_8mds_8f_ae601373f8acae350412756b81d7274c6}{dot} (c, d)
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_ac8fc253e71c54239b8fdeca12294dc5c}{cross} (c, d, e)
+\item 
+real function \hyperlink{_b_i_g_8lmdm_8mds_8f_a4f0dc28bb4bc5945b250816796a6393c}{triple} (c, d, e)
+\item 
+real function \hyperlink{_b_i_g_8lmdm_8mds_8f_a0bbe4edf805497daf7eb55647f0e5463}{dis2} (c, d)
+\item 
+real function \hyperlink{_b_i_g_8lmdm_8mds_8f_a01231839cc4a4124a635ad9d120126a6}{dis} (c, d)
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_a104a2973a06ccc713e06d9f6cb97874e}{normal} (x)
+\item 
+real function \hyperlink{_b_i_g_8lmdm_8mds_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60}{disptl} (cen, axis, pnt)
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_aede2b2a740b771fe587f556209c97414}{subdiv} (cen, rad, x, y, angle, density, maxsub, pnts,                   npnt, ps)
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_ad6dfe437b099fa551d05e784b5c7afcd}{subarc} (cen, rad, axis, density, x, v, maxsub, pnts,                   npnt, ps)
+\item 
+subroutine \hyperlink{_b_i_g_8lmdm_8mds_8f_a4957fbd7ab497fae37c246c1ae6d6f86}{subcir} (cen, rad, axis, density, maxsub, pnts, npnt,                   ps)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\hypertarget{_b_i_g_8lmdm_8mds_8f_ac8fc253e71c54239b8fdeca12294dc5c}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!cross@{cross}}
+\index{cross@{cross}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{cross(c, d, e)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine cross (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d, }
+\item[{real, dimension(3)}]{e}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_ac8fc253e71c54239b8fdeca12294dc5c}
+
+
+Definition at line 859 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_i_g_8lmdm_8mds_8f_ac8fc253e71c54239b8fdeca12294dc5c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_a01231839cc4a4124a635ad9d120126a6}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!dis@{dis}}
+\index{dis@{dis}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{dis(c, d)}]{\setlength{\rightskip}{0pt plus 5cm}real function dis (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_a01231839cc4a4124a635ad9d120126a6}
+
+
+Definition at line 893 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{_b_i_g_8lmdm_8mds_8f_a01231839cc4a4124a635ad9d120126a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_a0bbe4edf805497daf7eb55647f0e5463}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!dis2@{dis2}}
+\index{dis2@{dis2}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{dis2(c, d)}]{\setlength{\rightskip}{0pt plus 5cm}real function dis2 (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_a0bbe4edf805497daf7eb55647f0e5463}
+
+
+Definition at line 879 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{_b_i_g_8lmdm_8mds_8f_a0bbe4edf805497daf7eb55647f0e5463_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!disptl@{disptl}}
+\index{disptl@{disptl}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{disptl(cen, axis, pnt)}]{\setlength{\rightskip}{0pt plus 5cm}real function disptl (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real, dimension(3)}]{axis, }
+\item[{real, dimension(3)}]{pnt}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60}
+
+
+Definition at line 924 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=195pt]{_b_i_g_8lmdm_8mds_8f_a4e9fa2843ce6a1ff87a65c5b8e014c60_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_ae601373f8acae350412756b81d7274c6}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!dot@{dot}}
+\index{dot@{dot}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{dot(c, d)}]{\setlength{\rightskip}{0pt plus 5cm}real function dot (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_ae601373f8acae350412756b81d7274c6}
+
+
+Definition at line 845 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{_b_i_g_8lmdm_8mds_8f_ae601373f8acae350412756b81d7274c6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_aa81f9e2405716814317f319fe16aabf3}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!mds@{mds}}
+\index{mds@{mds}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{mds(maxatm, rp, natom, atoms, radii, atmden, atten, mol, atmarea)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine mds (
+\begin{DoxyParamCaption}
+\item[{integer}]{maxatm, }
+\item[{real}]{rp, }
+\item[{integer}]{natom, }
+\item[{real, dimension(3,natom)}]{atoms, }
+\item[{real, dimension(natom)}]{radii, }
+\item[{real, dimension(natom)}]{atmden, }
+\item[{integer, dimension(natom)}]{atten, }
+\item[{integer, dimension(natom)}]{mol, }
+\item[{real, dimension(natom)}]{atmarea}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_aa81f9e2405716814317f319fe16aabf3}
+
+
+Definition at line 9 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{_b_i_g_8lmdm_8mds_8f_aa81f9e2405716814317f319fe16aabf3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{_b_i_g_8lmdm_8mds_8f_aa81f9e2405716814317f319fe16aabf3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_a104a2973a06ccc713e06d9f6cb97874e}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!normal@{normal}}
+\index{normal@{normal}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{normal(x)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine normal (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{x}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_a104a2973a06ccc713e06d9f6cb97874e}
+
+
+Definition at line 905 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_i_g_8lmdm_8mds_8f_a104a2973a06ccc713e06d9f6cb97874e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_abe5d23f06aa6cacf4afa05316bab2b62}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!putpnt@{putpnt}}
+\index{putpnt@{putpnt}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{putpnt(itype, i, moln, atten, coor, area, pcen, acen, natom, atmarea)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine putpnt (
+\begin{DoxyParamCaption}
+\item[{integer}]{itype, }
+\item[{integer}]{i, }
+\item[{integer}]{moln, }
+\item[{integer}]{atten, }
+\item[{real, dimension(3)}]{coor, }
+\item[{real}]{area, }
+\item[{real, dimension(3)}]{pcen, }
+\item[{real, dimension(3)}]{acen, }
+\item[{}]{natom, }
+\item[{real, dimension(natom)}]{atmarea}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_abe5d23f06aa6cacf4afa05316bab2b62}
+
+
+Definition at line 711 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{_b_i_g_8lmdm_8mds_8f_abe5d23f06aa6cacf4afa05316bab2b62_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{_b_i_g_8lmdm_8mds_8f_abe5d23f06aa6cacf4afa05316bab2b62_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_ad6dfe437b099fa551d05e784b5c7afcd}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!subarc@{subarc}}
+\index{subarc@{subarc}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{subarc(cen, rad, axis, density, x, v, maxsub, pnts,                   npnt, ps)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine subarc (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real}]{rad, }
+\item[{real, dimension(3)}]{axis, }
+\item[{real}]{density, }
+\item[{real, dimension(3)}]{x, }
+\item[{real, dimension(3)}]{v, }
+\item[{integer}]{maxsub, }
+\item[{real, dimension (3, maxsub)}]{pnts, }
+\item[{integer}]{npnt, }
+\item[{real}]{ps}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_ad6dfe437b099fa551d05e784b5c7afcd}
+
+
+Definition at line 989 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{_b_i_g_8lmdm_8mds_8f_ad6dfe437b099fa551d05e784b5c7afcd_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{_b_i_g_8lmdm_8mds_8f_ad6dfe437b099fa551d05e784b5c7afcd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_a4957fbd7ab497fae37c246c1ae6d6f86}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!subcir@{subcir}}
+\index{subcir@{subcir}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{subcir(cen, rad, axis, density, maxsub, pnts, npnt,                   ps)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine subcir (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real}]{rad, }
+\item[{real, dimension(3)}]{axis, }
+\item[{real}]{density, }
+\item[{integer}]{maxsub, }
+\item[{real, dimension(3, maxsub)}]{pnts, }
+\item[{integer}]{npnt, }
+\item[{real}]{ps}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_a4957fbd7ab497fae37c246c1ae6d6f86}
+
+
+Definition at line 1018 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{_b_i_g_8lmdm_8mds_8f_a4957fbd7ab497fae37c246c1ae6d6f86_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{_b_i_g_8lmdm_8mds_8f_a4957fbd7ab497fae37c246c1ae6d6f86_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_aede2b2a740b771fe587f556209c97414}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!subdiv@{subdiv}}
+\index{subdiv@{subdiv}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{subdiv(cen, rad, x, y, angle, density, maxsub, pnts,                   npnt, ps)}]{\setlength{\rightskip}{0pt plus 5cm}subroutine subdiv (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{cen, }
+\item[{real}]{rad, }
+\item[{real, dimension(3)}]{x, }
+\item[{real, dimension(3)}]{y, }
+\item[{real}]{angle, }
+\item[{real}]{density, }
+\item[{integer}]{maxsub, }
+\item[{real, dimension (3, maxsub)}]{pnts, }
+\item[{integer}]{npnt, }
+\item[{real}]{ps}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_aede2b2a740b771fe587f556209c97414}
+
+
+Definition at line 951 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_b_i_g_8lmdm_8mds_8f_aede2b2a740b771fe587f556209c97414_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{_b_i_g_8lmdm_8mds_8f_a4f0dc28bb4bc5945b250816796a6393c}{}\index{B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}!triple@{triple}}
+\index{triple@{triple}!B\+I\+G.\+lmdm.\+mds.\+f@{B\+I\+G.\+lmdm.\+mds.\+f}}
+\subsubsection[{triple(c, d, e)}]{\setlength{\rightskip}{0pt plus 5cm}real function triple (
+\begin{DoxyParamCaption}
+\item[{real, dimension(3)}]{c, }
+\item[{real, dimension(3)}]{d, }
+\item[{real, dimension(3)}]{e}
+\end{DoxyParamCaption}
+)}\label{_b_i_g_8lmdm_8mds_8f_a4f0dc28bb4bc5945b250816796a6393c}
+
+
+Definition at line 868 of file B\+I\+G.\+lmdm.\+mds.\+f.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{_b_i_g_8lmdm_8mds_8f_a4f0dc28bb4bc5945b250816796a6393c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{_b_i_g_8lmdm_8mds_8f_a4f0dc28bb4bc5945b250816796a6393c_icgraph}
+\end{center}
+\end{figure}
+
+

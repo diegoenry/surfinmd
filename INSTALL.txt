@@ -1,0 +1,8 @@
+Installing SURFINMD is quite easy.
+
+First edit 'compile.sh' script
+Second type './compile.sh'
+
+You're done !
+
+
