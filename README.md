@@ -6,6 +6,7 @@ In addition it decomposes the binding area by residue, allowing the user to dig 
 
 There is an extensive documentation produced by Doxygen. Download and have fun browsing it :) 
 
+```bash
 ###################################################
  # Program:  SurfinMD - version 1.06p4 - 14Oct2016 #
  # Diego E.B. Gomes(1), Gabriel Limaverde SCS(2)   #
@@ -35,3 +36,4 @@ There is an extensive documentation produced by Doxygen. Download and have fun b
   -a    = attention number    [6]
   -ext  = (Rvdw + ext )       [n]
   -scal = (Rvdw * scal)       [n]
+```
